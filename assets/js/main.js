@@ -70,18 +70,76 @@ tabs.forEach(tab =>{
     })
 })
 
-
-
-
 /* ============== SERVIES MODEL ==================== */
+const modalViews = document.querySelectorAll('.services__modal'),
+      modalBtns = document.querySelectorAll('.services__button'),
+      modalCloses = document.querySelectorAll('.services__modal-close')
 
+let modal = function(modalClick){
+    modalViews[modalClick].classList.add('active-modal')
+}
+
+modalBtns.forEach((modalBtn, i) =>{
+    modalBtn.addEventListener('click', () =>{
+        modal(i)
+    })
+})
+
+modalCloses.forEach((modalClose) =>{
+    modalClose.addEventListener('click', () =>{
+        modalViews.forEach((modalView) =>{
+            modalView.classList.remove('active-modal')
+        })
+    })
+})
 
 /* ============== PORTIFOLIO SWIPER ==================== */
+// import Swiper from 'swiper/swiper-bundle.mjs';
+// import 'swiper/swiper-bundle.css';
+let swiperPortifolio = new Swiper('.portifolio__container', {
+    cssMode: true,
+    loop: true,
 
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable:true,
+    },
+});
 
 /* ============== TESTIMONIAL ==================== */
+let swiperTestimonial = new Swiper('.testimonial__container', {
+    loop: true,
+    grabCursor: true,
+    spaceBeteen:48,
 
+    pagination: {
+        el: '.swiper-pagination',
+        clickable:true,
+        dynamicBullets:true,
+    },
+    breakpoints:{
+        586:{
+            slidesPerView: 2
+        }
+    }
+});
 
 /* ============== SCROLL SECTIONS ACTIVE LINK ==================== */
+
+
+
+/* ============== CHANGE BACKGROUND HEADER ==================== */
+
+
+
+/* ============== SHOW SCROLL TOP ==================== */
+
+
+
+/* ============== DARK LIGHT THEME ==================== */
 
 
